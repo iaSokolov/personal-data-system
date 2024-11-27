@@ -1,33 +1,41 @@
 package ru.iasokolov.demo.persdata.model.employee.attr
 
 import jakarta.persistence.*
-import ru.iasokolov.demo.persdata.model.employee.obj.Employee
+import ru.iasokolov.demo.persdata.model.common.RecordBase
 import java.time.LocalDate
-import java.util.UUID
+import java.util.*
 
-@Entity(name = "EmployeeAttribute")
+@Entity
 @Table(name = "employee_attribute")
+@AttributeOverrides(
+    value = [AttributeOverride(name = "objectId", column = Column(name = "employee_id"))]
+)
 class EmployeeAttribute(
-    @Id
-    @Column(name = "id")
-    var id: UUID,
+    id: UUID,
+    employeeId: UUID,
+    startDate: LocalDate,
+    endDate: LocalDate,
+    opIdMsr: Int,
+    opIdIn: Int,
+    opIdOut: Int? = null,
+    deleted: Boolean = false,
+    dataType: String,
 
-    @Column(name = "start_date")
-    val startDate: LocalDate,
-
-    @Column(name = "end_date")
-    val endDate: LocalDate,
-
-    @Column(name = "deleted")
-    val deleted: Boolean = false,
-
-    @ManyToOne(
-        fetch = FetchType.LAZY,
-        optional = false
-    )
+    @ManyToOne(cascade = [CascadeType.ALL])
     @JoinColumn(
-        name = "employee_id",
-        foreignKey = ForeignKey(name = "fk_employee_attr__employee")
+        name = "data_id",
+        referencedColumnName = "id",
+        foreignKey = ForeignKey(name = "fk_employee_attr__employee_attr_data")
     )
-    val employee: Employee
+    val data: EmployeeAttributeData,
+) : RecordBase(
+    id = id,
+    objectId = employeeId,
+    startDate = startDate,
+    endDate = endDate,
+    opIdMsr = opIdMsr,
+    opIdIn = opIdIn,
+    opIdOut = opIdOut,
+    deleted = deleted,
+    dataType = dataType
 )

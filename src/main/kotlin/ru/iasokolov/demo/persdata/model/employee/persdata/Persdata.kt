@@ -1,19 +1,18 @@
-package ru.iasokolov.demo.persdata.model.labor.attr
+package ru.iasokolov.demo.persdata.model.employee.persdata
 
 import jakarta.persistence.*
 import ru.iasokolov.demo.persdata.model.common.RecordBase
-import ru.iasokolov.demo.persdata.model.employee.attr.EmployeeAttributeData
 import java.time.LocalDate
 import java.util.*
 
 @Entity
-@Table(name = "labor_attr")
+@Table(name = "persdata")
 @AttributeOverrides(
-    value = [AttributeOverride(name = "objectId", column = Column(name = "labor_id"))]
+    value = [AttributeOverride(name = "objectId", column = Column(name = "employee_id"))]
 )
-class LaborAttribute(
+class Persdata(
     id: UUID,
-    laborId: UUID,
+    employeeId: UUID,
     startDate: LocalDate,
     endDate: LocalDate,
     opIdMsr: Int,
@@ -26,12 +25,12 @@ class LaborAttribute(
     @JoinColumn(
         name = "data_id",
         referencedColumnName = "id",
-        foreignKey = ForeignKey(name = "fk_labor_attr__labor_attr_data")
+        foreignKey = ForeignKey(name = "fk_persdata__persdata_data")
     )
-    val data: EmployeeAttributeData,
-) : RecordBase(
+    val data: PersdataData
+): RecordBase(
     id = id,
-    objectId = laborId,
+    objectId = employeeId,
     startDate = startDate,
     endDate = endDate,
     opIdMsr = opIdMsr,

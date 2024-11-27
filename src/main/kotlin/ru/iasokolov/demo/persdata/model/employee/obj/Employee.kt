@@ -4,7 +4,7 @@ import jakarta.persistence.*
 import ru.iasokolov.demo.persdata.model.employee.attr.EmployeeAttribute
 import java.util.*
 
-@Entity(name = "Employee")
+@Entity
 @Table(name = "employee")
 class Employee(
     @Id
@@ -17,11 +17,7 @@ class Employee(
     @Column(name = "deleted")
     val deleted: Boolean = false,
 
-    @OneToMany(
-        mappedBy = "employee",
-        cascade = [CascadeType.ALL],
-        orphanRemoval = true,
-        targetEntity = EmployeeAttribute::class
-    )
+    @OneToMany(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "employee_id")
     val attributes: MutableList<EmployeeAttribute> = mutableListOf()
 )
