@@ -8,3 +8,6 @@ databaseChangeLog:
         - sqlFile:
             path: create-employee-table.sql
             relativeToChangelogFile: true
+        - sqlFile:
+            path: create-employee-attr-table.sql
+            relativeToChangelogFile: true
