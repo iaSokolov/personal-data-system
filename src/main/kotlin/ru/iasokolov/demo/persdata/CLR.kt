@@ -10,7 +10,7 @@ import ru.iasokolov.demo.persdata.model.employee.obj.EmployeeRepository
 import java.time.LocalDate
 import java.util.*
 
-@Component
+//@Component
 class CLR(
     private val employeeRepository: EmployeeRepository,
     private val employeeAttributeRepository: EmployeeAttributeRepository,

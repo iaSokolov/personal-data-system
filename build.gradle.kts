@@ -33,6 +33,7 @@ dependencies {
 
 	// DataBase
 	runtimeOnly("org.postgresql:postgresql")
+	implementation("org.liquibase:liquibase-core")
 
 	// Test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
