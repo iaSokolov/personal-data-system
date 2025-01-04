@@ -19,7 +19,7 @@ class Persdata(
     opIdIn: Int,
     opIdOut: Int? = null,
     deleted: Boolean = false,
-    dataType: String,
+    type: String,
 
     @ManyToOne(cascade = [CascadeType.ALL])
     @JoinColumn(
@@ -37,5 +37,5 @@ class Persdata(
     opIdIn = opIdIn,
     opIdOut = opIdOut,
     deleted = deleted,
-    dataType = dataType
+    type = type
 )

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: issues-1-create-employee-table
+      author: iaSokolov
+      comment: Init Employee table
+      link: https://github.com/iaSokolov/personal-data-system/issues/1
+      changes:
+        - sqlFile:
+            path: create-employee-table.sql
+            relativeToChangelogFile: true
+        - sqlFile:
+            path: create-employee-attr-table.sql
+            relativeToChangelogFile: true

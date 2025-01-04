@@ -20,7 +20,7 @@ class LaborAttribute(
     opIdIn: Int,
     opIdOut: Int? = null,
     deleted: Boolean = false,
-    dataType: String,
+    type: String,
 
     @ManyToOne(cascade = [CascadeType.ALL])
     @JoinColumn(
@@ -38,5 +38,5 @@ class LaborAttribute(
     opIdIn = opIdIn,
     opIdOut = opIdOut,
     deleted = deleted,
-    dataType = dataType
+    type = type
 )

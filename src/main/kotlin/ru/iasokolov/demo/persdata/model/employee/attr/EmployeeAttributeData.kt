@@ -10,6 +10,6 @@ class EmployeeAttributeData(
     @Column(name = "id")
     var id: UUID,
 
-    @Column(name = "value")
-    val value: String,
+    @Column(name = "company")
+    val company: String,
 )
