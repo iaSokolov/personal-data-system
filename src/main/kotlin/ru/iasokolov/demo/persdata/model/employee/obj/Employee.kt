@@ -11,9 +11,6 @@ class Employee(
     @Column(name = "id")
     var id: UUID,
 
-    @Column(name = "company")
-    val company: String,
-
     @Column(name = "deleted")
     val deleted: Boolean = false,
 

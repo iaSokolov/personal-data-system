@@ -6,7 +6,7 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 import java.util.*
 
-@Entity(name = "Operation")
+@Entity
 @Table(name = "operation")
 class Operation(
     @Id

@@ -9,6 +9,7 @@ CREATE TABLE employee_attribute_data(
 CREATE TABLE employee_attribute(
 	id uuid NOT NULL,
 	employee_id uuid NOT NULL,
+	type text NOT NULL,
 	start_date date NULL,
 	end_date date NULL,
 	deleted bool NULL,

@@ -28,12 +28,18 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
+	// Logging
+	implementation("io.github.microutils:kotlin-logging-jvm:2.0.11")
+
 	// DevTools
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 
 	// DataBase
 	runtimeOnly("org.postgresql:postgresql")
 	implementation("org.liquibase:liquibase-core")
+
+	// Utils
+	implementation("com.fasterxml.uuid:java-uuid-generator:4.1.0")
 
 	// Test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

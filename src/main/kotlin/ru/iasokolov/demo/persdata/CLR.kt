@@ -19,20 +19,19 @@ class CLR(
         val employeeId = UUID.randomUUID()
         val employee = Employee(
             id = employeeId,
-            company = "TestCompany",
             deleted = false,
             attributes = mutableListOf()
         )
 
         val dataPeriodData = EmployeeAttributeData(
             id = UUID.randomUUID(),
-            value = "Data from period"
+            company = "TestCompany"
         )
 
         val attrOldPeriod = EmployeeAttribute(
             id = UUID.randomUUID(),
             employeeId = employeeId,
-            dataType = "1",
+            type = "1",
             opIdMsr = 1,
             opIdIn = 1,
             startDate = LocalDate.of(1987, 2, 25),
@@ -44,7 +43,7 @@ class CLR(
         val attrNewPeriod = EmployeeAttribute(
             id = UUID.randomUUID(),
             employeeId = employeeId,
-            dataType = "1",
+            type = "1",
             opIdMsr = 2,
             opIdIn = 2,
             startDate = LocalDate.of(1987, 2, 25),

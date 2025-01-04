@@ -34,6 +34,6 @@ abstract class RecordBase(
     @Column(name = "op_id_out")
     var opIdOut: Int? = null,
 
-    @Column(name = "data_type")
-    val dataType: String,
+    @Column(name = "type")
+    val type: String,
 ) : Serializable

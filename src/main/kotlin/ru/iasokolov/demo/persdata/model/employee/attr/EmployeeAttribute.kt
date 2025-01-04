@@ -19,13 +19,12 @@ class EmployeeAttribute(
     opIdIn: Int,
     opIdOut: Int? = null,
     deleted: Boolean = false,
-    dataType: String,
+    type: String,
 
     @ManyToOne(cascade = [CascadeType.ALL])
     @JoinColumn(
         name = "data_id",
         referencedColumnName = "id",
-        foreignKey = ForeignKey(name = "fk_employee_attr__employee_attr_data")
     )
     val data: EmployeeAttributeData,
 ) : RecordBase(
@@ -37,5 +36,5 @@ class EmployeeAttribute(
     opIdIn = opIdIn,
     opIdOut = opIdOut,
     deleted = deleted,
-    dataType = dataType
+    type = type
 )
