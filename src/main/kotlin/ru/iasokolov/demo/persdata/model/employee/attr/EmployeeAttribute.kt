@@ -21,7 +21,7 @@ class EmployeeAttribute(
     deleted: Boolean = false,
     type: String,
 
-    @ManyToOne(cascade = [CascadeType.ALL])
+    @ManyToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(
         name = "data_id",
         referencedColumnName = "id",

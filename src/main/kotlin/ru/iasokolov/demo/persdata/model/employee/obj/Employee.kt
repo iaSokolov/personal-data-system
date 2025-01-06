@@ -14,7 +14,7 @@ class Employee(
     @Column(name = "deleted")
     val deleted: Boolean = false,
 
-    @OneToMany(cascade = [CascadeType.ALL])
+    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id")
     val attributes: MutableList<EmployeeAttribute> = mutableListOf()
 )
